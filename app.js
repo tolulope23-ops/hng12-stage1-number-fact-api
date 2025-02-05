@@ -14,11 +14,11 @@ const PORT = process.env.PORT;
 
 app.get('/api/classify-number/', async (req, res) => {
     const number = (req.query.num);    
-    if(isNaN(number) || number === ""){
-        return res.status(StatusCodes.BAD_REQUEST).json({
-            error: true,
-            number: req.query.num
-        })
+    if (!number || isNaN(number) || !Number.isInteger(Number(number))) {
+        return res.status(400).json({
+            number,
+            error: true
+        });
     }
     try {
         const response = await fetch(`http://numbersapi.com/${number}/math?json`);
