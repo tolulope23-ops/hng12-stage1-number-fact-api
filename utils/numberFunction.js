@@ -59,7 +59,4 @@ const isDigitSum = (number) => {
     }
 }
 
-console.log(isArmStrong(-153));
-
-
 module.exports = {isPrime, isPerfect, isArmStrong, isDigitSum};
