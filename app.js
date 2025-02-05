@@ -14,7 +14,7 @@ const PORT = process.env.PORT;
 
 app.get('/api/classify-number/', async (req, res) => {
     const number = (req.query.num);
-    if(isNaN(number) || number < 1){
+    if(isNaN(number)){
         return res.status(StatusCodes.BAD_REQUEST).json({
             number: number,
             error:"Invalid number"

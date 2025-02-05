@@ -1,5 +1,3 @@
-const { StatusCodes } = require("http-status-codes");
-
 const isPrime = (number) =>{
     if (number <= 2) return false;
 
