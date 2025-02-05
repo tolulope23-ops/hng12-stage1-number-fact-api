@@ -74,6 +74,8 @@ const isDigitSum = (number) => {
     }
 }
 
+// return number.toString().split('').reduce((acc, digit) => acc + Number(digit), 0);
+
 const PORT = process.env.PORT;
 
 app.get('/api/classify-number/', async (req, res) => {
