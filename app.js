@@ -16,7 +16,7 @@ app.get('/api/classify-number/', async (req, res) => {
     const number = Number(req.query.num);
     if(!Number.isInteger(number)){
         return res.status(StatusCodes.BAD_REQUEST).json({
-            number: "alphabet",
+            number: req.query.num,
             error:"true"
         })
     }
