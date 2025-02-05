@@ -84,7 +84,7 @@ app.get('/api/classify-number/', async (req, res) => {
     if (!number || isNaN(number)) {
         return res.status(400).json({
             error: true,
-            number: number || ""
+            number: number
         });
     }
 
@@ -98,8 +98,8 @@ app.get('/api/classify-number/', async (req, res) => {
 
         const result = {
             num,
-            is_Perfect: isPerfect(num),
-            is_Prime: isPrime(num),
+            is_perfect: isPerfect(num),
+            is_prime: isPrime(num),
             properties: isArmStrong(num),
             digit_sum: isDigitSum(num),
             fun_fact: data
