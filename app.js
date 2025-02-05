@@ -42,8 +42,3 @@ app.get('/api/classify-number/', async (req, res) => {
 app.listen(PORT, ()=>{
     console.log(`Server is listening on port ${PORT}`);
 });
-
-
-
-// https://numberapi-s194.onrender.com/api/classify-number?num=1
-//https://github.com/tolulope23-ops/numberApi.git

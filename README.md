@@ -1,19 +1,26 @@
-PROJECT DESCRIPTION 
-The Number API provides interesting mathematical properties and fun facts about a given number. It supports checking if a number is Armstrong, Even, or Odd, isPrime, isPerfect and isDigitSum, returns data in JSON format, CORS enabled for public access and fetches a fun fact using the Numbers API.
+PROJECT DESCRIPTION
+  The numberApi provides interesting mathematical properties (isPrime, isPerfect, isDigitSum and funfact using the number API) about a given number. Its returns a data in json format, CORS enabled for public access.
 
-SETUP INSTRUCTIONS
-Clone the repository git clone https://github.com/tolulope23-ops/numberApi.git 
+API ENDPOINT
+	get /api/classify-number?num=371
+
+RESPONSES
+  {
+  "number": 371,
+  "isPrime":false,
+  "isPerfect":false,
+  "properties":["armstrong", "odd"],
+  "digit_sum":11
+  "fun_fact":"371 is an Armsrong number because 3^3 + 7^3 + 1^3"
+  }
+
+INSTALLATION & SETUP
+  git clone https://github.com/tolulope23-ops/numberApi.git
+
 Install dependencies: npm install
-SetUp environment variables create a .env file and add your environment variables e.g PORT.
-Run the Server npm app.js
+Start the Server: npm start
 
-API DOCUMENTATION 
-  Endpoint: get "https://your-deployment-url.com/api/classify-number/?num=6"
-Response format: {
-  "number": 6,
-  "isPrime": false ,
-  "isPerfect": true,
-  "properties": ["armstrong", "even"],
-  "funFact": "6 is the smallest perfect number."
-}
+DEPLOYMENT
+  https://numberapi-97s8.onrender.com/api/classify-number?num=371
 
+	
