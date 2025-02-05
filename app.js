@@ -23,15 +23,15 @@ app.get('/api/classify-number/', async (req, res) => {
     try {
         const response = await fetch(`http://numbersapi.com/${number}/math?json`);
         const data = await response.json();
-
-        res.status(StatusCodes.OK).json({
+        const result = {
             number: number,
             is_Perfect: isPerfect(number),
             is_Prime: isPrime(number),
             properties: isArmStrong(number),
             digit_sum: isDigitSum(number),
             fun_fact: data.text
-        })
+        }
+        res.status(StatusCodes.OK).json(result)
     } catch (error) {
         res.status(StatusCodes.BAD_REQUEST).json({ 
             error: "Error fetching number fact" 
