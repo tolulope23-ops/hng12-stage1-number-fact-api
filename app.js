@@ -79,7 +79,7 @@ const isDigitSum = (number) => {
 const PORT = process.env.PORT;
 
 app.get('/api/classify-number/', async (req, res) => {
-    const cache = new map();
+    const cache = new Map();
     const number = (req.query.num);  
     if (!number || isNaN(number)) {
         return res.status(400).json({
