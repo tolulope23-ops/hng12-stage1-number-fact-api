@@ -16,7 +16,7 @@ app.get('/api/classify-number/', async (req, res) => {
     const number = (req.query.num);    
     if(isNaN(number) || number === ""){
         return res.status(StatusCodes.BAD_REQUEST).json({
-             error:"true",
+            error:"true",
             number: req.query.num
         })
     }
