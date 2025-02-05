@@ -20,15 +20,17 @@ app.get('/api/classify-number/', async (req, res) => {
             error: true
         });
     }
+
+    const num = Number(number);
     try {
         const response = await fetch(`http://numbersapi.com/${number}/math?json`);
         const data = await response.json();
         const result = {
-            number: number,
-            is_Perfect: isPerfect(number),
-            is_Prime: isPrime(number),
-            properties: isArmStrong(number),
-            digit_sum: isDigitSum(number),
+            number: num,
+            is_Perfect: isPerfect(num),
+            is_Prime: isPrime(num),
+            properties: isArmStrong(num),
+            digit_sum: isDigitSum(num),
             fun_fact: data.text
         }
         res.status(StatusCodes.OK).json(result)
