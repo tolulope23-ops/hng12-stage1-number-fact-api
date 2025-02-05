@@ -77,18 +77,23 @@ const isDigitSum = (number) => {
 const PORT = process.env.PORT;
 
 app.get('/api/classify-number/', async (req, res) => {
-    const number = (req.query.num);    
-    if (!number || isNaN(number) || !Number.isInteger(Number(number))) {
+    const cache = new map();
+    const number = (req.query.num);  
+    if (!number || isNaN(number)) {
         return res.status(400).json({
             error: true,
-            number
+            number: number || ""
         });
     }
 
-    const num = Number(number);
+    const num = parseInt(number, 10);
     try {
-        const response = await fetch(`http://numbersapi.com/${number}/math?json`);
+        // optimizing external Api call
+        if(cache.has(number))  return res.status(200).json(cache.get(number));
+
+        const response = await fetch(`https://numbersapi.com/${number}/math?json`);
         const data = await response.json().text;
+
         const result = {
             num,
             is_Perfect: isPerfect(num),
