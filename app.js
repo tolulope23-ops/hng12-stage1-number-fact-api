@@ -13,11 +13,11 @@ const {isPrime, isPerfect, isDigitSum, isArmStrong} = require('./utils/numberFun
 const PORT = process.env.PORT;
 
 app.get('/api/classify-number/', async (req, res) => {
-    const number = Number(req.query.num);
-    if(!Number.isInteger(number)){
+    const number = (req.query.num);    
+    if(isNaN(number) || number === ""){
         return res.status(StatusCodes.BAD_REQUEST).json({
-            number: req.query.num,
-            error:"true"
+             error:"true",
+            number: req.query.num
         })
     }
     try {
