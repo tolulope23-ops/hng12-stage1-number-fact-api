@@ -8,13 +8,13 @@ const isPrime = (number) =>{
 }
 
 const isArmStrong = (number) =>{
-    let numArray = number.toString().split('');
+    let num = Math.abs(number);
+    let numArray = num.toString().split('');
     let numLength = numArray.length;
 
     const is_Armstrong = numArray.map(num => parseInt(num)).reduce((acc, num) => acc + num**numLength, 0);
-    
-    if(number == is_Armstrong){
-        if(number % 2 === 0){
+    if(num == is_Armstrong){
+        if(num % 2 === 0){
             return ["isarmstrong", "even"];
         }
         else{
@@ -22,7 +22,7 @@ const isArmStrong = (number) =>{
         }
     }
     else{
-        if(number % 2 === 0){
+        if(num % 2 === 0){
             return ["even"];
         }
         else{
@@ -30,6 +30,9 @@ const isArmStrong = (number) =>{
         }
     } 
 }
+
+console.log(isArmStrong(-371));
+
 
 const isPerfect = (number) => {
     if(number <= 1) return false;

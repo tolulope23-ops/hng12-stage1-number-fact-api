@@ -13,10 +13,10 @@ const {isPrime, isPerfect, isDigitSum, isArmStrong} = require('./utils/numberFun
 const PORT = process.env.PORT;
 
 app.get('/api/classify-number/', async (req, res) => {
-    const number = (req.query.num);
-    if(Number.isInteger(number)){
+    const number = Number(req.query.num);
+    if(!Number.isInteger(number)){
         return res.status(StatusCodes.BAD_REQUEST).json({
-            number: number,
+            number: req.query.num,
             error:"true"
         })
     }
