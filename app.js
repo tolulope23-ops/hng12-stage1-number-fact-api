@@ -80,8 +80,8 @@ app.get('/api/classify-number/', async (req, res) => {
     const number = (req.query.num);    
     if (!number || isNaN(number) || !Number.isInteger(Number(number))) {
         return res.status(400).json({
-            number,
-            error: true
+            error: true,
+            number
         });
     }
 
@@ -90,7 +90,7 @@ app.get('/api/classify-number/', async (req, res) => {
         const response = await fetch(`http://numbersapi.com/${number}/math?json`);
         const data = await response.json().text;
         const result = {
-            number: num,
+            num,
             is_Perfect: isPerfect(num),
             is_Prime: isPrime(num),
             properties: isArmStrong(num),
