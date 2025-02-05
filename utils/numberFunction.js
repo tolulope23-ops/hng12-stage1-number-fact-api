@@ -44,10 +44,22 @@ const isPerfect = (number) => {
 }
 
 const isDigitSum = (number) => {
+    let removeIndex;
+    let digitSum;
     let digitArray = number.toString().split('');
-
-    return digitArray.map(num => parseInt(num)).reduce((acc, num) => acc + num, 0)
+    if(digitArray[0] === '-'){
+        removeIndex = digitArray.slice(1);
+        digitSum = removeIndex.map(num => parseInt(num)).reduce((acc, num) => acc + num, 0)
+        const add = parseInt("-" + digitSum);
+        return add;
+    }
+    else{
+        digitSum = digitArray.map(num => parseInt(num)).reduce((acc, num) => acc + num, 0)
+        return digitSum;
+    }
 }
+
+console.log(isArmStrong(-153));
 
 
 module.exports = {isPrime, isPerfect, isArmStrong, isDigitSum};
