@@ -31,8 +31,6 @@ const isArmStrong = (number) =>{
     } 
 }
 
-console.log(isArmStrong(-371));
-
 
 const isPerfect = (number) => {
     if(number <= 1) return false;
