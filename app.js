@@ -17,7 +17,7 @@ app.get('/api/classify-number/', async (req, res) => {
     if(isNaN(number) || number < 1){
         return res.status(StatusCodes.BAD_REQUEST).json({
             number: number,
-            error:"Invalid number"
+            error:"true"
         })
     }
     try {
@@ -46,4 +46,4 @@ app.listen(PORT, ()=>{
 
 
 // https://numberapi-s194.onrender.com/api/classify-number?num=1
-// https://github.com/tolulope23-ops/numberApi.git
+//https://github.com/tolulope23-ops/numberApi.git
