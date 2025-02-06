@@ -79,7 +79,6 @@ const isDigitSum = (number) => {
 const PORT = process.env.PORT;
 
 app.get('/api/classify-number/', async (req, res) => {
-    const cache = new Map();
     const number = (req.query.num);  
     if (!number || isNaN(number)) {
         return res.status(400).json({
@@ -90,8 +89,6 @@ app.get('/api/classify-number/', async (req, res) => {
 
     const num = parseInt(number, 10);
     try {
-        // optimizing external Api call
-        if(cache.has(number))  return res.status(200).json(cache.get(number));
 
         const response = await fetch(`https://numbersapi.com/${number}/math?json`);
         const data = await response.json().text;
