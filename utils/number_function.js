@@ -1,5 +1,5 @@
 
-// Helper function to cehck if a number is prime
+// Function to check if a number is prime
 const isPrime = (number) =>{
     if (number < 2) return false;
 
@@ -9,7 +9,7 @@ const isPrime = (number) =>{
     return true;
 }
 
-// Helper function to cehck if a number is Armstrong
+// Function to check if a number is Armstrong
 const isArmStrong = (number) =>{
     let num = Math.abs(number);
     let numArray = num.toString().split('');
@@ -20,7 +20,7 @@ const isArmStrong = (number) =>{
     return num == is_Armstrong;
 }
 
-// Helper function to cehck if a number is perfect
+// Function to check if a number is perfect
 const isPerfect = (number) => {
     if(number <= 1) return false;
     let sum = 0;
@@ -33,7 +33,7 @@ const isPerfect = (number) => {
     return sum == number;
 }
 
-// Helper function to check if a number is digitSum
+// Function to check if a number is digitSum
 const isDigitSum = (number) => {
     let digit = Math.abs(number);
     let digitArray = digit.toString().split('');
@@ -43,6 +43,7 @@ const isDigitSum = (number) => {
     
 }
 
+// Function to get the funfact of a number
 const get_number_fact = async (number) =>{
     try {
         const response = await fetch(`http://numbersapi.com/${number}/math?json`);
