@@ -15,7 +15,8 @@ RESPONSES
   }
 
 INSTALLATION & SETUP
-  git clone https://github.com/tolulope23-ops/numberApi.git
+  git clone https://github.com/tolulope23-ops/hng12-stage1-number-fact-api.git
+  cd numberApi
 
 Install dependencies: npm install
 Start the Server: npm start
